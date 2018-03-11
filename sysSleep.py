@@ -1,3 +1,4 @@
+#Suspend is from https://stackoverflow.com/questions/7517496/suspend-hibernate-pc-with-python
 from suspend import suspend
 from threading import Timer
 
@@ -9,7 +10,7 @@ from threading import Timer
 print('\n How long until your computer should go to sleep? \n')
 
 while True:
-    try: 
+    try:
         hours = eval(input('hours: '))
         minutes = eval(input('\nminutes: '))
         seconds = eval(input('\nseconds: '))
