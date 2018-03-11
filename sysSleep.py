@@ -1,4 +1,5 @@
-from suspend import suspend
+# Hibernation method from https://stackoverflow.com/questions/7517496/suspend-hibernate-pc-with-python
+import win32api
 from threading import Timer
 
 #import os
@@ -9,7 +10,7 @@ from threading import Timer
 print('\n How long until your computer should go to sleep? \n')
 
 while True:
-    try: 
+    try:
         hours = eval(input('hours: '))
         minutes = eval(input('\nminutes: '))
         seconds = eval(input('\nseconds: '))
@@ -22,6 +23,6 @@ while True:
 timerSum = (hours * 60 * 60) + (minutes * 60) + seconds
 
 # Create a timer object with the number of seconds and the function to be called
-t = Timer(timerSum, suspend, ['False'])
+t = Timer(timerSum, win32api.SetSystemPowerState(False, True))
 
 t.start()
